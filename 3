@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+func main() {
+	url := "https://lukesmith.xyz/rss"
+	fmt.Println(url)
+
+	out, err := http.Get(url)
+
+	if err != nil {
+		fmt.Print(&out.Body)
+	} else {
+		fmt.Println(err.Error())
+	}
+
+}
